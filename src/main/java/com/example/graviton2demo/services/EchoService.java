@@ -11,8 +11,11 @@ import java.util.Map;
 public class EchoService {
 
     public String getRuntimeInfo(){
-        Runtime rt = Runtime.getRuntime();
-        return rt.toString();
+        String stringRT = "";
+        stringRT += System.getProperty("java.vm.name") + " ";
+        stringRT += System.getProperty("java.vendor") + " ";
+        stringRT += System.getProperty("java.version") + " ";
+        return stringRT;
     }
 
     public EchoInoPojo getEchoInfo(){
