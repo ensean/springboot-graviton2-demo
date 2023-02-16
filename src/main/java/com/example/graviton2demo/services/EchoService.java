@@ -4,6 +4,8 @@ import com.example.graviton2demo.pojo.EchoInoPojo;
 import org.springframework.stereotype.Service;
 import software.amazon.awssdk.regions.internal.util.EC2MetadataUtils;
 
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
 
 
 @Service
@@ -25,6 +27,7 @@ public class EchoService {
         echoInoPojo.setInstanceAZ(EC2MetadataUtils.getAvailabilityZone());
         echoInoPojo.setInstanceId(EC2MetadataUtils.getInstanceId());
         echoInoPojo.setInstanceType(EC2MetadataUtils.getInstanceType());
+        echoInoPojo.setTimestamp(new SimpleDateFormat("yyyyMMdd HH:mm:ss").format(Calendar.getInstance().getTime()));
         return echoInoPojo;
     }
 }

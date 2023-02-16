@@ -31,6 +31,16 @@ public class EchoInoPojo {
     private String instanceType;
     private String instanceAZ;
 
+    public String getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(String timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    private String timestamp;
+
     public String getRuntime() {
         return runtime;
     }
